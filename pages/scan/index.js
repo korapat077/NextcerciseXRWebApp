@@ -22,7 +22,7 @@ export default function Scan() {
     <div id="targetFrame" >
       <iframe
         id="targetFrame"
-        src="/scan.html"
+        src="../scan.html"
         width={width}
         height={height}
       ></iframe>
