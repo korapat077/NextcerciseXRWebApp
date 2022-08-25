@@ -56,7 +56,8 @@ const CpIdT = () => {
       // alert(`${latitude},${longtitude}`)
       console.log("ระยะห่าง (KM)", distances);
       if (distances <= length) {
-        if (ischeckArea === false) {
+        if (ischeckArea == false) {
+          console.log("อยู่ในพื้นที่");
           setIsCheckArea(true);
           window.localStorage.setItem("startFile",startFile)
           window.localStorage.setItem("resultFile",resultFile)
@@ -65,6 +66,7 @@ const CpIdT = () => {
           window.localStorage.setItem("cpId",cpId)
         }
       } else {
+        console.log("อยู่นอกพื้นที่");
         Swal.fire({
           position: "center",
           icon: "warning",
