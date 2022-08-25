@@ -22,7 +22,7 @@ export default function Scan() {
     <div id="targetFrame" >
       <iframe
         id="targetFrame"
-        src="https://nextcercise-xrw-eb-app.vercel.app/scan.html"
+        src="/scan.html"
         width={width}
         height={height}
       ></iframe>
