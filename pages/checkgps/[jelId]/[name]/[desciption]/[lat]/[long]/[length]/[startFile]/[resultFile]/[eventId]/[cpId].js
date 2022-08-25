@@ -65,7 +65,7 @@ const CpIdT = () => {
           window.localStorage.setItem("jelId",jelId)
           window.localStorage.setItem("eventId",eventId)
           window.localStorage.setItem("cpId",cpId)
-          window.location.assign("/scan")
+          window.location.assign("/scan/")
         }
       } else {
         console.log("อยู่นอกพื้นที่");

@@ -23,7 +23,6 @@ export default function Scan() {
       <iframe
         id="targetFrame"
         src="/scan.html"
-        // src="/scan.html"
         width={width}
         height={height}
       ></iframe>
