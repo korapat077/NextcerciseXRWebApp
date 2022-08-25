@@ -65,7 +65,7 @@ const CpIdT = () => {
           window.localStorage.setItem("jelId",jelId)
           window.localStorage.setItem("eventId",eventId)
           window.localStorage.setItem("cpId",cpId)
-          window.location.assign("/scan/")
+           window.location.href="/scan/"
         }
       } else {
         console.log("อยู่นอกพื้นที่");
@@ -98,11 +98,13 @@ const CpIdT = () => {
           <p className=" bg-white p-2 h-52  text-center text-back shadow-inner shadow-slate-500/50   mt-4 pt-4 py-2 px-4 rounded">
             {desciption}
           </p>
+          <Link href={`/scan/`}>
           <button className="bg-gradient-to-r from-[#f78830]  to-[#fc252f] w-full mt-4  text-white font-bold py-2 px-4  rounded-full"
            onClick={onCheckLocation}
           >
             Next
           </button>
+          </Link>
         </a>
         <div className="flex justify-start font-bold  text-white mt-10 items-center gap-4">
           <Link href={`/checkpoint/${eventId}`}>
