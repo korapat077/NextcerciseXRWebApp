@@ -58,26 +58,29 @@ export default function Home() {
           <div className=" flex flex-col items-center   ">
             <div className="font-bold text-2xl text-white">NEXT CERCISE</div>
             {stateDataEvent.map((r, k) => {
-              return (
-                <div key={k} className="w-screen px-2 pt-5">
-                  <Link href={`/${r.eId}`}>
-                  <a 
-                    className="block h-28  p-5 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                    style={{
-                      backgroundImage: `steam-files/event/${r.eId}/${r.visual}`,
-                    }}
-                  >
-                    <h5 className="mb-2 text-2xl truncate font-bold tracking-tight text-gray-900 dark:text-white">
-                      {r.title}
-                    </h5>
-                    <p className="font-normal truncate  text-gray-700 dark:text-gray-400">
-                      {r.description}
-                    </p>
-                  </a>
-                  </Link>
-              
-                </div>
-              );
+              if(!r.isTrash){
+                return (
+                  <div key={k} className="w-screen px-2 pt-5">
+                    <Link href={`/${r.eId}`}>
+                    <a 
+                      className="block h-28  p-5 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                      style={{
+                        backgroundImage: `steam-files/event/${r.eId}/${r.visual}`,
+                      }}
+                    >
+                      <h5 className="mb-2 text-2xl truncate font-bold tracking-tight text-gray-900 dark:text-white">
+                        {r.title}
+                      </h5>
+                      <p className="font-normal truncate  text-gray-700 dark:text-gray-400">
+                        {r.description}
+                      </p>
+                    </a>
+                    </Link>
+                
+                  </div>
+                );
+              }
+   
             })}
           </div>
         </div>
