@@ -16,7 +16,7 @@
     </a-scene>
 </body>
 <script>
-    document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://nextcercisexr-api.herokuapp.com/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
+    document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://8537-2403-6200-89a6-1e47-f8c6-dd19-e96-bc9d.ap.ngrok.io/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
     document.querySelector('#target').addEventListener("targetFound", (event) => {
         // window.open("http://localhost:3000/scansucceed")
         window.location.assign("/scansucceed")

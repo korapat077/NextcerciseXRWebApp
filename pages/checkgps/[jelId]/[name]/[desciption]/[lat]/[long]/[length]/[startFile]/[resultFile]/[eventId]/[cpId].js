@@ -58,14 +58,14 @@ const CpIdT = () => {
       if (distances <= length) {
         if (ischeckArea == false) {
           console.log("อยู่ในพื้นที่");
-
           setIsCheckArea(true);
           window.localStorage.setItem("startFile", startFile)
           window.localStorage.setItem("resultFile", resultFile)
           window.localStorage.setItem("jelId", jelId)
           window.localStorage.setItem("eventId", eventId)
           window.localStorage.setItem("cpId", cpId)
-          window.location.href = "/scan/" ; 
+          router.push("/scan/");
+          // window.location.assign("/scan/");
         }
       } else {
         console.log("อยู่นอกพื้นที่");
