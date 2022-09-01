@@ -149,31 +149,72 @@ const ButtonCheckpoint = ({ eventId }) => {
                       left={`${r.positionX}%`}
                     >
                       {r2.isSuccess == true ? (
-                        <button className=" bg-lime-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
-                          {r2.cpId}
+                        // <button className=" bg-lime-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
+                        //   {r2.cpId}
+                        // </button>
+                        <button
+                          className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold shadow-red-600 shadow-2xl   w-16 h-16 rounded-full`}
+                        >
+                          <img
+                            src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.afterFile}`}
+                          />
+                          <span className="bg-black px-5 rounded-2xl">
+                            {r.cpId}
+                          </span>
                         </button>
                       ) : r2.cpOrder <= 1 && r2.isSuccess == false ? (
                         <Link
                           href={`/checkgps/${r2.jelId}/${r.name}/${r.desciption}/${r.lat}/${r.long}/${r.length}/${r.startFile}/${r.resultFile}/${eventId}/${r2.cpId}`}
                         >
-                          <button className="  bg-amber-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
+                          {/* <button className="  bg-amber-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
                             {r2.cpId}
+                            
+                          </button> */}
+                          <button
+                            className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold  w-16 h-16 rounded-full`}
+                          >
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
+                            />
+                            <span className="bg-black px-5 rounded-2xl">
+                              {r.cpId}
+                            </span>
                           </button>
                         </Link>
                       ) : r2.cpOrder == array.length + 1 ? (
                         <Link
                           href={`/checkgps/${r2.jelId}/${r.name}/${r.desciption}/${r.lat}/${r.long}/${r.length}/${r.startFile}/${r.resultFile}/${eventId}/${r2.cpId}`}
                         >
-                          <div>
+                          {/* <div>
                             <button className="  bg-amber-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
                               {r2.cpId}
                             </button>
-                          </div>
+                          </div> */}
+                          <button
+                            className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold   w-16 h-16 rounded-full`}
+                          >
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
+                            />
+                            <span className="bg-black px-5 rounded-2xl">
+                              {r.cpId}
+                            </span>
+                          </button>
                         </Link>
                       ) : (
                         // แสกนตัวนี้
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-16 h-16 rounded-full">
-                          {r2.cpId}
+                        // <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-16 h-16 rounded-full">
+                        //   {r2.cpId}
+                        // </button>
+                        <button
+                          className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold  blur-md w-16 h-16 rounded-full`}
+                        >
+                          <img
+                            src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
+                          />
+                          <span className="bg-black px-5 rounded-2xl">
+                            {r.cpId}
+                          </span>
                         </button>
 
                         // ไม่บอกหลอก
@@ -212,21 +253,31 @@ const ButtonCheckpoint = ({ eventId }) => {
                   >
                     {
                       r2.isSuccess == true ? (
-                        <div>
-                          <button className=" bg-lime-600 hover:bg-blue-700 text-white font-bold  w-16 h-16 rounded-full">
-                            {r2.cpId}
-                          </button>
-                        </div>
+                        <button
+                          className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold shadow-red-600 shadow-2xl   w-16 h-16 rounded-full`}
+                        >
+                          <img
+                            src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.afterFile}`}
+                          />
+                          <span className="bg-black px-5 rounded-2xl">
+                            {r.cpId}
+                          </span>
+                        </button>
                       ) : // เสร็จ
                       r2.isSuccess == false ? (
                         <Link
                           href={`/checkgps/${r2.jelId}/${r.name}/${r.desciption}/${r.lat}/${r.long}/${r.length}/${r.startFile}/${r.resultFile}/${eventId}/${r2.cpId}`}
                         >
-                          <div>
-                            <button className="  bg-amber-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
-                              {r2.cpId}
-                            </button>
-                          </div>
+                          <button
+                            className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold   w-16 h-16 rounded-full`}
+                          >
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
+                            />
+                            <span className="bg-black px-5 rounded-2xl">
+                              {r.cpId}
+                            </span>
+                          </button>
                         </Link>
                       ) : (
                         "test"

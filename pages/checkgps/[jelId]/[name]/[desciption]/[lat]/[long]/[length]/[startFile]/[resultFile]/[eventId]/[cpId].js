@@ -64,7 +64,7 @@ const CpIdT = () => {
           window.localStorage.setItem("jelId", jelId)
           window.localStorage.setItem("eventId", eventId)
           window.localStorage.setItem("cpId", cpId)
-          router.push("/scan/");
+          router.push("/scan");
           // window.location.assign("/scan/");
         }
       } else {
@@ -89,7 +89,7 @@ const CpIdT = () => {
           Check point {cpId}
         </h5>
         <a
-          href="#"
+         
           className="block p-8 w-full bg-white rounded-b-2xl border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <h5 className="font-bold text-2xl mt-2 text-center text-[#f12757]  dark:text-gray-400">

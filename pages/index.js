@@ -54,7 +54,7 @@ export default function Home() {
   const CheckLogin = () => {
     if (uId) {
       return (
-        <div className=" flex  h-screen justify-center mt-5  ">
+        <div className=" flex  h-screen justify-center mt-5 ">
           <div className=" flex flex-col items-center   ">
             <div className="font-bold text-2xl text-white">NEXT CERCISE</div>
             {stateDataEvent.map((r, k) => {
@@ -80,7 +80,7 @@ export default function Home() {
                   </div>
                 );
               }
-   
+
             })}
           </div>
         </div>
