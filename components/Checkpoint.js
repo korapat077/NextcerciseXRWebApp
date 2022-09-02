@@ -21,6 +21,7 @@ const CheckPointComponents = () => {
           method: "get",
           url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/${eventId}`,
         }).then(function (response) {
+          console.log(response);
           setStateDataEvent(response.data.result);
           setImg(
             `${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/event/${eventId}/${response.data.result.background}`

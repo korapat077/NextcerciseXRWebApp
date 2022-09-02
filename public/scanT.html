@@ -16,10 +16,10 @@
   </a-scene>
 </body>
 <script>
-  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://nextcercisexr-api.herokuapp.com/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
+  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://76b5-2403-6200-89a6-f3e8-4c6-54f-abeb-dbeb.ap.ngrok.io/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
   document.querySelector('#target').addEventListener("targetFound", (event) => {
   // window.open("http://localhost:3000/scansucceed")
-  window.open("https://nextcercise-xrw-eb-app.vercel.app/scansucceed", "_top");
+  window.open("http://localhost:3000/scansucceed", "_top");
   });
 </script>
 

@@ -94,10 +94,11 @@ const ButtonCheckpoint = ({ eventId }) => {
                 }
               });
               if (respones.length <= isSuccessLength) {
+                console.log(respones.length);
                 setIsCheckpoint(true);
                 window.location.assign("/succed");
               } else {
-                console.log("ไม่สำเร็จ");
+                // console.log("ไม่สำเร็จ");
               }
               setCheckpoint(respones);
             });
