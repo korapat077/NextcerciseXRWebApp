@@ -22,6 +22,7 @@ const CheckPoint = () => {
       }, 500);
     }
   }, [router.isReady]);
+
   if (!router.isReady) {
   } else {
     if (stateDataEvent.isTrash == false && stateDataEvent.isPublish == true) {
