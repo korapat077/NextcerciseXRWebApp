@@ -61,7 +61,7 @@ const ButtonCheckpoint = ({ eventId }) => {
         url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/${eventId}`,
       }).then(function (response) {
         const respones = response.data.result;
-        console.log(respones);
+        // console.log(respones);
         setIsrandom(respones);
       });
       axios({

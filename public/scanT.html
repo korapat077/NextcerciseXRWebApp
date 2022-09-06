@@ -16,10 +16,11 @@
   </a-scene>
 </body>
 <script>
-  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://76b5-2403-6200-89a6-f3e8-4c6-54f-abeb-dbeb.ap.ngrok.io/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
+  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://b496-2403-6200-89a6-f3e8-b56f-adb3-5b3f-250e.ap.ngrok.io/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
   document.querySelector('#target').addEventListener("targetFound", (event) => {
   // window.open("http://localhost:3000/scansucceed")
-  window.open("http://localhost:3000/scansucceed", "_top");
+  // ให้รีหน้า 
+  window.open("https://nextcercise-xrw-eb-app.vercel.app/scansucceed", "_top");
   });
 </script>
 
