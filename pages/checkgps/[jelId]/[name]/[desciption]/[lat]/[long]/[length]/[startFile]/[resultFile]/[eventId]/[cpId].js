@@ -18,7 +18,7 @@ const CpIdT = () => {
     startFile,
     resultFile,
     eventId,
-    cpId
+    cpId,
   } = router.query;
 
   const location = CheckGps();
@@ -39,6 +39,7 @@ const CpIdT = () => {
     };
     myLocation();
   }, [location]);
+
   const onCheckLocation = () => {
     const calDistance = () => {
       var distance = getDistance(
@@ -59,11 +60,11 @@ const CpIdT = () => {
         if (ischeckArea == false) {
           console.log("อยู่ในพื้นที่");
           setIsCheckArea(true);
-          window.localStorage.setItem("startFile", startFile)
-          window.localStorage.setItem("resultFile", resultFile)
-          window.localStorage.setItem("jelId", jelId)
-          window.localStorage.setItem("eventId", eventId)
-          window.localStorage.setItem("cpId", cpId)
+          window.localStorage.setItem("startFile", startFile);
+          window.localStorage.setItem("resultFile", resultFile);
+          window.localStorage.setItem("jelId", jelId);
+          window.localStorage.setItem("eventId", eventId);
+          window.localStorage.setItem("cpId", cpId);
           router.push("/scan");
           // window.location.assign("/scan/");
         }
@@ -81,17 +82,15 @@ const CpIdT = () => {
       }
     };
     calDistance();
-  }
+  };
+  // console.log(myLocation.lat);
   return (
     <div>
       <div className="flex flex-col justify-center items-center h-screen p-4">
         <h5 className="w-full  bg-black  tracking-tight text-white p-4 rounded-t-3xl dark:text-white">
           Check point {cpId}
         </h5>
-        <a
-         
-          className="block p-8 w-full bg-white rounded-b-2xl border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-        >
+        <a className="block p-8 w-full bg-white rounded-b-2xl border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <h5 className="font-bold text-2xl mt-2 text-center text-[#f12757]  dark:text-gray-400">
             {name}
           </h5>
@@ -99,12 +98,12 @@ const CpIdT = () => {
             {desciption}
           </p>
 
-          <button className="bg-gradient-to-r from-[#f78830]  to-[#fc252f] w-full mt-4  text-white font-bold py-2 px-4  rounded-full"
+          <button
+            className="bg-gradient-to-r from-[#f78830]  to-[#fc252f] w-full mt-4  text-white font-bold py-2 px-4  rounded-full"
             onClick={onCheckLocation}
           >
             Next
           </button>
-
         </a>
         <div className="flex justify-start font-bold  text-white mt-10 items-center gap-4">
           <Link href={`/checkpoint/${eventId}`}>

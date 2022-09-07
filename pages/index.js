@@ -28,7 +28,7 @@ export default function Home() {
     const data = async () => {
       const lastData = await axios({
         method: "get",
-        url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/`,
+        url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/show/publish`,
       }).then(function (response) {
         setStateDataEvent(response.data.result);
         // console.log(response.data.result);
