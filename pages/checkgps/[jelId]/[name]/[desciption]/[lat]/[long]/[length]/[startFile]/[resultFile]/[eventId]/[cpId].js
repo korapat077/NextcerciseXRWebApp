@@ -117,8 +117,8 @@ const CpIdT = () => {
           </Link>
           <div>
             <a
-              href={`https://www.google.com/maps/dir/${myLocation.lat},${myLocation.lng}/${lat},${lat}/data=!3m1!4b1!4m2!4m1!3e2`}
-              // href={`https://www.google.com/maps/dir/${lat},${long}/${myLocation.lat},${myLocation.lng}/data=!3m1!4b1!4m2!4m1!3e2`}
+              // href={`https://www.google.com/maps/dir/${myLocation.lat},${myLocation.lng}/${lat},${lat}/data=!3m1!4b1!4m2!4m1!3e2`}
+               href={`https://www.google.com/maps/dir/${lat},${long}/${myLocation.lat},${myLocation.lng}/data=!3m1!4b1!4m2!4m1!3e2`}
               target="_blank"
               rel="noreferrer"
             >
