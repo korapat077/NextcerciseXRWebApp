@@ -1,19 +1,19 @@
 import React from "react";
-import Pic_Logo from "../../asset/pic/logo.png";
+import LOGO1 from "../../asset/pic/LOGO1.png";
 import Pic_Success from "../../asset/pic/success.png";
 import Image from "next/image";
 export default function index() {
   return (
     <div className="bg-black absolute top-0 left-0 w-full ">
       <div className="body ">
-        <center className="bg-black">
+        <div className="bg-black">
           <Image
-            src={Pic_Logo}
+            src={LOGO1}
             alt="Alt text for the picture"
             width="100%"
             height="100%"
           />
-        </center>
+        </div>
       </div>
       <div className="success mt-5 font-bold pt-10 bg-white rounded-t-2xl h-screen first-letter:font-bold">
         <center>
