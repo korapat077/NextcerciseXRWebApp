@@ -94,7 +94,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                 }
               });
               if (respones.length <= isSuccessLength) {
-                console.log(respones.length);
+                // console.log(respones.length);
                 setIsCheckpoint(true);
                 window.location.assign("/succed");
               } else {
