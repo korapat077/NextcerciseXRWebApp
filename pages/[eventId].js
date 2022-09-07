@@ -22,7 +22,7 @@ const Pang = () => {
           method: "get",
           url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/${eventId}`,
         }).then(function (response) {
-          console.log(response.data.result);
+          // console.log(response.data.result);
           const dateNow = Math.floor(Date.now() / 1000);
           const dateStart = Math.floor(
             new Date(response.data.result.periodStart).getTime() / 1000

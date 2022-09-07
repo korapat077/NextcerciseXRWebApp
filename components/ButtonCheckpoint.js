@@ -53,7 +53,7 @@ const ButtonCheckpoint = ({ eventId }) => {
         url: `${process.env.NEXT_PUBLIC_APP_NAME}/checkpoint/event/${eventId}`,
       }).then(function (response) {
         const respones = response.data.result;
-        // console.log(respones);
+        // console.log("test", respones);
         setDataCheckpoint(respones);
       });
       axios({
