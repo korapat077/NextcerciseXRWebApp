@@ -6,14 +6,14 @@ export default function index() {
   return (
     <div className="bg-black absolute top-0 left-0 w-full ">
       <div className="body ">
-        <div className="bg-black">
+        <center className="bg-black w-100">
           <Image
             src={LOGO1}
             alt="Alt text for the picture"
             width="100%"
             height="100%"
           />
-        </div>
+        </center>
       </div>
       <div className="success mt-5 font-bold pt-10 bg-white rounded-t-2xl h-screen first-letter:font-bold">
         <center>
