@@ -10,7 +10,7 @@ export default function index() {
           <Image
             src={LOGO1}
             alt="Alt text for the picture"
-            className="w-80"
+            width="80%"
           />
         </center>
       </div>
