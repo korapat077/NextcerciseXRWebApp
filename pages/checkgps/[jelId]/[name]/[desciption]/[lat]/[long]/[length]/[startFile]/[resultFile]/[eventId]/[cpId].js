@@ -35,10 +35,11 @@ const CpIdT = () => {
       if (!location.loaded) {
       } else {
         setMylocation(location.coordinates);
+        console.log(location.coordinates);
       }
     };
     myLocation();
-  }, [location]);
+  });
 
   const onCheckLocation = () => {
     const calDistance = () => {
