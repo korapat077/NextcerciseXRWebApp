@@ -16,11 +16,11 @@
   </a-scene>
 </body>
 <script>
-  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://nextcercisexr-api.herokuapp.com/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
+  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://0ece-2403-6200-89a7-3d6a-4000-bc86-ae31-c10d.ap.ngrok.io/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
   document.querySelector('#target').addEventListener("targetFound", (event) => {
   // window.open("http://localhost:3000/scansucceed")
   // ให้รีหน้า 
-  window.open("https://nextcercise-xrw-eb-app.vercel.app/scansucceed", "_top");
+  window.open("http://localhost:3000//scansucceed", "_top");
   });
 </script>
 

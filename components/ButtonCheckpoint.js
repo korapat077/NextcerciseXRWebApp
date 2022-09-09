@@ -53,7 +53,7 @@ const ButtonCheckpoint = ({ eventId }) => {
         url: `${process.env.NEXT_PUBLIC_APP_NAME}/checkpoint/event/${eventId}`,
       }).then(function (response) {
         const respones = response.data.result;
-        // console.log("test", respones);
+        console.log("test", respones);
         setDataCheckpoint(respones);
       });
       axios({
@@ -88,6 +88,7 @@ const ButtonCheckpoint = ({ eventId }) => {
               url: `${process.env.NEXT_PUBLIC_APP_NAME}/join-event-list/event/${jeId}`,
             }).then(function (response) {
               const respones = response.data.result;
+              // console.log(respones);
               respones.map((r) => {
                 if (r.isSuccess) {
                   isSuccessLength += 1;
@@ -160,7 +161,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                             src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.afterFile}`}
                           />
                           <span className="bg-black px-5 rounded-2xl">
-                            {r.cpId}
+                            {r2.cpOrder}
                           </span>
                         </button>
                       ) : r2.cpOrder <= 1 && r2.isSuccess == false ? (
@@ -178,7 +179,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                               src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
                             />
                             <span className="bg-black px-5 rounded-2xl">
-                              {r.cpId}
+                              {r2.cpOrder}
                             </span>
                           </button>
                         </Link>
@@ -198,7 +199,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                               src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
                             />
                             <span className="bg-black px-5 rounded-2xl">
-                              {r.cpId}
+                              {r2.cpOrder}
                             </span>
                           </button>
                         </Link>
@@ -214,7 +215,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                             src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
                           />
                           <span className="bg-black px-5 rounded-2xl">
-                            {r.cpId}
+                            {r2.cpOrder}
                           </span>
                         </button>
 
@@ -261,7 +262,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                             src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.afterFile}`}
                           />
                           <span className="bg-black px-5 rounded-2xl">
-                            {r.cpId}
+                            {r2.cpOrder}
                           </span>
                         </button>
                       ) : // เสร็จ
@@ -276,7 +277,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                               src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
                             />
                             <span className="bg-black px-5 rounded-2xl">
-                              {r.cpId}
+                              {r2.cpOrder}
                             </span>
                           </button>
                         </Link>

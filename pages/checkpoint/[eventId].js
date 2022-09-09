@@ -19,7 +19,7 @@ const CheckPoint = () => {
           method: "get",
           url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/${eventId}`,
         }).then(function (response) {
-          console.log(response.data);
+          // console.log(response.data);
           setStateDataEvent(response.data.result);
           setStateStatus(response.success);
           setLoding(true);
