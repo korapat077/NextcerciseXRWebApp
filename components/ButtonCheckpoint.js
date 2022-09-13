@@ -185,7 +185,7 @@ const ButtonCheckpoint = ({ eventId }) => {
                               <button
                                 className={` text-white font-bold shadow-red-600 shadow-2xl w-16  h-16 rounded-full`}
                               >
-                                 <img
+                                <img
                                   src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
                                 />
                               </button>
@@ -227,21 +227,21 @@ const ButtonCheckpoint = ({ eventId }) => {
                         //   {r2.cpId}
                         // </button>
                         <div
-                        className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] grayscale   flex justify-center items-center text-center `}
-                      >
-                        <div>
-                          <button
-                            className={` text-white font-bold shadow-red-600 shadow-2xl w-16  h-16 rounded-full`}
-                          >
-                            <img
-                              src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
-                            />
-                          </button>
-                          <div className="rounded-2xl text-white  p-2 text-sm bg-neutral-800 ">
-                            <div>{r.name}</div>
+                          className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] grayscale   flex justify-center items-center text-center `}
+                        >
+                          <div>
+                            <button
+                              className={` text-white font-bold shadow-red-600 shadow-2xl w-16  h-16 rounded-full`}
+                            >
+                              <img
+                                src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
+                              />
+                            </button>
+                            <div className="rounded-2xl text-white  p-2 text-sm bg-neutral-800 ">
+                              <div>{r.name}</div>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
                         // ไม่บอกหลอก
                       )}
