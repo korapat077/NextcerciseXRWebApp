@@ -279,32 +279,48 @@ const ButtonCheckpoint = ({ eventId }) => {
                   >
                     {
                       r2.isSuccess == true ? (
-                        <button
-                          className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold shadow-red-600 shadow-2xl   w-16 h-16 rounded-full`}
-                        >
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.afterFile}`}
-                          />
-                          <span className="bg-black px-5 rounded-2xl">
-                            {r2.cpOrder}
-                          </span>
-                        </button>
+                        <div
+                        className={`absolute top-[${r.positionY}%] left-[${r.positionX}%]  flex justify-center items-center text-center `}
+                      >
+                        <div>
+                          <button
+                            className={` text-white font-bold shadow-red-600 shadow-2xl w-16  h-16 rounded-full`}
+                          >
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.afterFile}`}
+                            />
+                          </button>
+                          <div className="rounded-2xl text-white  p-2 text-sm bg-neutral-800 ">
+                            <div>{r.name}</div>
+                          </div>
+                        </div>
+                      </div>
                       ) : // เสร็จ
                       r2.isSuccess == false ? (
                         <Link
-                          href={`/checkgps/${r2.jelId}/${r.name}/${r.desciption}/${r.lat}/${r.long}/${r.length}/${r.startFile}/${r.resultFile}/${eventId}/${r2.cpId}`}
+                        href={`/checkgps/${r2.jelId}/${r.name}/${r.desciption}/${r.lat}/${r.long}/${r.length}/${r.startFile}/${r.resultFile}/${eventId}/${r2.cpId}`}
+                      >
+                        {/* <button className="  bg-amber-600 hover:bg-blue-700 text-white font-bold w-16 h-16  rounded-full">
+                          {r2.cpId}
+                          
+                        </button> */}
+                        <div
+                          className={`absolute top-[${r.positionY}%] left-[${r.positionX}%]  flex justify-center items-center text-center `}
                         >
-                          <button
-                            className={`absolute top-[${r.positionY}%] left-[${r.positionX}%] text-white font-bold   w-16 h-16 rounded-full`}
-                          >
-                            <img
-                              src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
-                            />
-                            <span className="bg-black px-5 rounded-2xl">
-                              {r2.cpOrder}
-                            </span>
-                          </button>
-                        </Link>
+                          <div>
+                            <button
+                              className={` text-white font-bold shadow-red-600 shadow-2xl w-16  h-16 rounded-full`}
+                            >
+                              <img
+                                src={`${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/checkpoint/${eventId}/${r.cpId}/${r.beforeFile}`}
+                              />
+                            </button>
+                            <div className="rounded-2xl text-white  p-2 text-sm bg-neutral-800 ">
+                              <div>{r.name}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
                       ) : (
                         "test"
                       ) // แสกนตัวแรก

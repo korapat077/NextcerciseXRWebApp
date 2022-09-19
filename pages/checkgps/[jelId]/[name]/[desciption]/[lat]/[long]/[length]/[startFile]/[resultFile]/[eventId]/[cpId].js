@@ -58,7 +58,7 @@ const CpIdT = () => {
       console.log("Your Location : ", myLocation.lat, myLocation.lng);
       // alert(`${latitude},${longtitude}`)
       console.log("Location : ",lat, long);
-      console.log("ระยะห่าง (km)", distances);
+      console.log("ระยะห่าง (m)", distances);
       if (distances <= length) {
         if (ischeckArea == false) {
           console.log("อยู่ในพื้นที่");
@@ -78,7 +78,7 @@ const CpIdT = () => {
           position: "center",
           icon: "warning",
           title: "You are out of the scan area.",
-          text: `distance is ${distances} km`,
+          text: `distance is ${distances - length } m`,
           showConfirmButton: false,
           showCloseButton: true,
         });
