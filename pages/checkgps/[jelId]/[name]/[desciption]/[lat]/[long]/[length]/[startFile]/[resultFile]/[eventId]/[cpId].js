@@ -54,10 +54,11 @@ const CpIdT = () => {
           longitude: parseFloat(myLocation.lng),
         }
       );
-      var distances = parseFloat(distance) / 100;
+      var distances = parseFloat(distance)  ;
       console.log("Your Location : ", myLocation.lat, myLocation.lng);
       // alert(`${latitude},${longtitude}`)
-      console.log("ระยะห่าง (M)", distances);
+      console.log("Location : ",lat, long);
+      console.log("ระยะห่าง (km)", distances);
       if (distances <= length) {
         if (ischeckArea == false) {
           console.log("อยู่ในพื้นที่");
@@ -77,7 +78,7 @@ const CpIdT = () => {
           position: "center",
           icon: "warning",
           title: "You are out of the scan area.",
-          text: `distance is ${distances} m`,
+          text: `distance is ${distances} km`,
           showConfirmButton: false,
           showCloseButton: true,
         });
