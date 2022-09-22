@@ -16,7 +16,7 @@
   </a-scene>
 </body>
 <script>
-  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://nextcercisexr-api.herokuapp.com/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
+  document.querySelector('#test').setAttribute('mindar-image', `imageTargetSrc:https://nexercise-67056719.ap-southeast-1.elb.amazonaws.com/api/v1/stream-files/checkpoint/${localStorage.getItem("eventId")}/${localStorage.getItem("cpId")}/${localStorage.getItem("startFile")}`);
   document.querySelector('#target').addEventListener("targetFound", (event) => {
   // window.open("http://localhost:3000/scansucceed")
   // ให้รีหน้า 
