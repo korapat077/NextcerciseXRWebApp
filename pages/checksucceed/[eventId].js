@@ -65,8 +65,7 @@ const Index = () => {
       });
     }
   }, [eventId]);
-
-  if (loding) {
+if(loding){
     return (
       <div>
         <div className=" h-screen flex justify-center items-center p-2">
@@ -98,13 +97,14 @@ const Index = () => {
         </div>
       </div>
     );
-  } else {
-    return (
-      <div>
-        <Loding />
-      </div>
-    );
-  }
+} else {
+  return (
+    <div>
+      <Loding />
+    </div>
+  );
+}
+
 };
 
 export default Index;
