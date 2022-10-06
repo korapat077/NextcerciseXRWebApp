@@ -57,6 +57,7 @@ const Index = () => {
               const respones = response.data.result;
               // console.log(response.data.result);
               setCheckpoint(respones);
+              setLoding(true);
             });
           });
         }
