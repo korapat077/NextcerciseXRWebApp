@@ -30,6 +30,7 @@ const Index = () => {
         const respones = response.data.result;
         // console.log(respones);
         setIsrandom(respones);
+
       });
       axios({
         method: "post",
@@ -61,7 +62,6 @@ const Index = () => {
             });
           });
         }
-        setLoding(true);
       });
     }
   }, [eventId]);
@@ -99,9 +99,11 @@ const Index = () => {
       </div>
     );
   } else {
-    return(
-    <Loding />
-    )
+    return (
+      <div>
+        <Loding />
+      </div>
+    );
   }
 };
 
