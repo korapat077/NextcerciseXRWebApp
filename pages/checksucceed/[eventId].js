@@ -53,7 +53,7 @@ const Index = () => {
               url: `${process.env.NEXT_PUBLIC_APP_NAME}/join-event-list/event/${jeId}`,
             }).then(function (response) {
               const respones = response.data.result;
-              console.log(response.data.result);
+              // console.log(response.data.result);
               setCheckpoint(respones);
             });
           });
