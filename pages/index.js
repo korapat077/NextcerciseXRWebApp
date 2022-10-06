@@ -60,7 +60,7 @@ export default function Home() {
             {stateDataEvent.map((r, k) => {
               if(!r.isTrash){
                 return (
-                  <div key={k} className="w-screen px-2 pt-5">
+                  <div key={k} className="w-screen px-2  py-2">
                     <Link href={`/${r.eId}`}>
                     <a 
                       className="block h-28  p-5 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"

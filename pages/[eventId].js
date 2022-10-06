@@ -35,7 +35,7 @@ const Pang = () => {
           setNowData(dateNow);
           setStateDataEvent(response.data.result);
           setImg(
-            `${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/event/${eventId}/${response.data.result.visual}`
+            `${process.env.NEXT_PUBLIC_APP_S3}/${response.data.result.visual}`
           );
         });
         setLoding(true);
@@ -45,20 +45,16 @@ const Pang = () => {
 
   if (!router.isReady) {
   } else {
-    if (stateDataEvent.isTrash == false && stateDataEvent.isPublish == true  ) {
+    if (stateDataEvent.isTrash == false && stateDataEvent.isPublish == true) {
       if (nowData >= startData) {
         if (nowData <= endData) {
-          if (loding) {
-            return (
-              <ShowEvnet
-                eventId={eventId}
-                title={stateDataEvent.title}
-                img={img}
-              />
-            );
-          } else {
-            return <Loding />;
-          }
+          return (
+            <ShowEvnet
+              eventId={eventId}
+              title={stateDataEvent.title}
+              img={img}
+            />
+          );
         } else {
           return <Unpublish />;
         }

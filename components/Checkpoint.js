@@ -4,7 +4,7 @@ import { useRouter, NextRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ButtonCheckpoint from "./ButtonCheckpoint";
 import Loding from "./Loding";
-import Image from 'next/image'
+import Image from "next/image";
 const CheckPointComponents = () => {
   const router = useRouter();
   const { eventId } = router.query;
@@ -13,6 +13,9 @@ const CheckPointComponents = () => {
   const [loding, setLoding] = useState(false);
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
+  const [startData, setStartData] = useState([]);
+  const [endData, setEndData] = useState([]);
+  const [nowData, setNowData] = useState([]);
   useEffect(() => {
     if (!router.isReady) {
     } else {
@@ -22,9 +25,19 @@ const CheckPointComponents = () => {
           url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/${eventId}`,
         }).then(function (response) {
           // console.log(response);
+          const dateNow = Math.floor(Date.now() / 1000);
+          const dateStart = Math.floor(
+            new Date(response.data.result.periodStart).getTime() / 1000
+          );
+          const dateEnd = Math.floor(
+            new Date(response.data.result.periodEnd).getTime() / 1000
+          );
           setStateDataEvent(response.data.result);
+          setStartData(dateStart);
+          setEndData(dateEnd);
+          setNowData(dateNow);
           setImg(
-            `${process.env.NEXT_PUBLIC_APP_NAME}/stream-files/event/${eventId}/${response.data.result.background}`
+            `${process.env.NEXT_PUBLIC_APP_S3}/${response.data.result.background}`
           );
           // console.log(response.data.result);
         });
@@ -47,15 +60,23 @@ const CheckPointComponents = () => {
     setHeight(getWindowDimensions().height);
     setWidth(getWindowDimensions().width);
   }, []);
-  if(img.length > 0){
-    return (
-      <div className="relative">
-        <img src={img} width={width} height={height}></img>
-        <ButtonCheckpoint eventId={eventId} />
-      </div>
-    );
-  }else{
-    return <Loding />
+  if (img.length > 0) {
+    if (stateDataEvent.isTrash == false && stateDataEvent.isPublish == true) {
+      if (nowData >= startData) {
+        if (nowData <= endData) {
+          return (
+            <div className="relative">
+              <img src={img} width={width} height={height}></img>
+              <ButtonCheckpoint eventId={eventId} />
+            </div>
+          );
+        }
+      } else {
+        return <Unpublish />;
+      }
+    } else {
+      return <Unpublish />;
+    }
   }
 };
 export default CheckPointComponents;

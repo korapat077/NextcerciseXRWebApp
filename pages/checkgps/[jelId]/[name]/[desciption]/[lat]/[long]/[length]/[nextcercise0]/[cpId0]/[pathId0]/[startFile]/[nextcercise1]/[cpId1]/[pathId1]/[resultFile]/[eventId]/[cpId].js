@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useRouter, NextRouter } from "next/router";
-import CheckGps from "../../../../../../../../../../../components/CheckGps";
+
 import { AiFillHome } from "react-icons/ai";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import Link from "next/link";
 import { getDistance } from "geolib";
 import Swal from "sweetalert2";
-import Loding from "../../../../../../../../../../../components/Loding";
+
+import CheckGps from "../../../../../../../../../../../../../../../../../components/CheckGps";
+import Loding from "../../../../../../../../../../../../../../../../../components/Loding";
 const CpIdT = () => {
   const router = useRouter();
   const {
@@ -16,7 +18,13 @@ const CpIdT = () => {
     lat,
     long,
     length,
+    nextcercise0,
+    cpId0,
+    pathId0,
     startFile,
+    nextcercise1,
+    cpId1,
+    pathId1,
     resultFile,
     eventId,
     cpId,
@@ -36,7 +44,7 @@ const CpIdT = () => {
       if (!location.loaded) {
       } else {
         setMylocation(location.coordinates);
-        console.log(location.coordinates);
+        // console.log(location.coordinates);
       }
     };
     myLocation();
@@ -55,16 +63,16 @@ const CpIdT = () => {
         }
       );
       var distances = parseFloat(distance)  ;
-      console.log("Your Location : ", myLocation.lat, myLocation.lng);
+      // console.log("Your Location : ", myLocation.lat, myLocation.lng);
       // alert(`${latitude},${longtitude}`)
-      console.log("Location : ",lat, long);
-      console.log("ระยะห่าง (m)", distances);
+      // console.log("Location : ",lat, long);
+      // console.log("ระยะห่าง (m)", distances);
       if (distances <= length) {
         if (ischeckArea == false) {
-          console.log("อยู่ในพื้นที่");
+          // console.log("อยู่ในพื้นที่");
           setIsCheckArea(true);
-          window.localStorage.setItem("startFile", startFile);
-          window.localStorage.setItem("resultFile", resultFile);
+          window.localStorage.setItem("startFile", `${nextcercise0}/${cpId0}/${pathId0}/${startFile}`);
+          window.localStorage.setItem("resultFile", `${nextcercise1}/${cpId1}/${pathId1}/${startFile}`);
           window.localStorage.setItem("jelId", jelId);
           window.localStorage.setItem("eventId", eventId);
           window.localStorage.setItem("cpId", cpId);
@@ -72,8 +80,8 @@ const CpIdT = () => {
           // window.location.assign("/scan/");
         }
       } else {
-        console.log("อยู่นอกพื้นที่");
-        console.log(length);
+        // console.log("อยู่นอกพื้นที่");
+        // console.log(length);
         Swal.fire({
           position: "center",
           icon: "warning",

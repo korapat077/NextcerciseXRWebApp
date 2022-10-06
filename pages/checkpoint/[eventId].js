@@ -11,6 +11,9 @@ const CheckPoint = () => {
   const [stateDataEvent, setStateDataEvent] = useState([]);
   const [statStatus, setStateStatus] = useState([]);
   const [loding, setLoding] = useState(false);
+  const [startData, setStartData] = useState([]);
+  const [endData, setEndData] = useState([]);
+  const [nowData, setNowData] = useState([]);
   useEffect(() => {
     if (!router.isReady) {
     } else {
@@ -20,6 +23,16 @@ const CheckPoint = () => {
           url: `${process.env.NEXT_PUBLIC_APP_NAME}/event/${eventId}`,
         }).then(function (response) {
           // console.log(response.data);
+          const dateNow = Math.floor(Date.now() / 1000);
+          const dateStart = Math.floor(
+            new Date(response.data.result.periodStart).getTime() / 1000
+          );
+          const dateEnd = Math.floor(
+            new Date(response.data.result.periodEnd).getTime() / 1000
+          );
+          setStartData(dateStart);
+          setEndData(dateEnd);
+          setNowData(dateNow);
           setStateDataEvent(response.data.result);
           setStateStatus(response.success);
           setLoding(true);
@@ -32,7 +45,13 @@ const CheckPoint = () => {
   } else {
     if (loding) {
       if (stateDataEvent.isTrash == false && stateDataEvent.isPublish == true) {
-        return <CheckPointComponents eventId={eventId} />;
+        if (nowData >= startData) {
+          if (nowData <= endData) {
+            return <CheckPointComponents eventId={eventId} />;
+          }
+        } else {
+          return <Unpublish />;
+        }
       } else {
         return <Unpublish />;
       }
