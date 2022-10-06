@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ButtonCheckpoint from "./ButtonCheckpoint";
 import Loding from "./Loding";
 import Image from "next/image";
+import Unpublish from "./Unpublish";
 const CheckPointComponents = () => {
   const router = useRouter();
   const { eventId } = router.query;
