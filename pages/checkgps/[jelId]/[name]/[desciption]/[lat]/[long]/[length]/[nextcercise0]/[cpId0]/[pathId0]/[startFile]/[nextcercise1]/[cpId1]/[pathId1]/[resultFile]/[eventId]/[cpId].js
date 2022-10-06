@@ -72,7 +72,7 @@ const CpIdT = () => {
           // console.log("อยู่ในพื้นที่");
           setIsCheckArea(true);
           window.localStorage.setItem("startFile", `${nextcercise0}/${cpId0}/${pathId0}/${startFile}`);
-          window.localStorage.setItem("resultFile", `${nextcercise1}/${cpId1}/${pathId1}/${startFile}`);
+          window.localStorage.setItem("resultFile", `${nextcercise1}/${cpId1}/${pathId1}/${resultFile}`);
           window.localStorage.setItem("jelId", jelId);
           window.localStorage.setItem("eventId", eventId);
           window.localStorage.setItem("cpId", cpId);
